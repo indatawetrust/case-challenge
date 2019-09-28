@@ -2,16 +2,17 @@ class MenuBoard {
   constructor(app, menu) {
 
     this.app = app
+    this.menu = menu
 
-    this.app.appendChild(this.image())
+    this.app.appendChild(this.image(this.menu[0]))
 
   }
 
-  image () {
+  image (meal) {
     const { el } = this
 
     return el('img', {
-      src: '/public/images/meal1.png',
+      src: meal.image,
       id: 'image'
     })
   }
