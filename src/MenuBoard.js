@@ -47,7 +47,7 @@ class MenuBoard extends Menu {
   }
 
   animation (image) {
-    const { addAnimation } = this
+    const { addAnimation, $$ } = this
 
     image.addEventListener(
       'animationend', async e => {
@@ -67,10 +67,16 @@ class MenuBoard extends Menu {
             duration: '1s'
           })
         } else {
+          const lastMeal = this.nextMeal()
+
+          image.src = lastMeal.image
+
           addAnimation('#image', {
             name: 'mealLeftToRight',
             duration: '1s'
           })
+
+          $$('#name').innerText = lastMeal.name
 
           addAnimation('#name', {
             name: 'nameFadeIn',

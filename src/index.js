@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', function (e) {
     {
       image: '/public/images/meal1.png',
       name: 'hamburger 1'
+    },
+    {
+      image: '/public/images/meal2.png',
+      name: 'hamburger 2'
+    },
+    {
+      image: '/public/images/meal3.png',
+      name: 'hamburger 3'
     }
   ]
 
