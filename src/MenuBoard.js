@@ -1,4 +1,5 @@
 import Menu from './Menu'
+import delay from 'delay'
 
 class MenuBoard extends Menu {
   constructor(app, menu) {
@@ -33,17 +34,22 @@ class MenuBoard extends Menu {
     const { addAnimation } = this
 
     image.addEventListener(
-      'animationend', e => {
+      'animationend', async e => {
         if (
           !e.target.style['animation-name'] ||
           e.target.style['animation-name'] === 'mealLeftToRight'
         ) {
+          await delay(1000)
+
           addAnimation('#image', {
             name: 'mealRightToLeft',
             duration: '1s'
           })
         } else {
-
+          addAnimation('#image', {
+            name: 'mealLeftToRight',
+            duration: '1s'
+          })
         }
       })
   }

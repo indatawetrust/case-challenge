@@ -27,6 +27,7 @@
     "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
-    "@babel/core": "^7.6.2"
+    "@babel/core": "^7.6.2",
+    "delay": "^4.3.0"
   }
 }
