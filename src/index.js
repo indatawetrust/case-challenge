@@ -10,4 +10,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
   ]
 
   const board = new MenuBoard(app, menu)
+
+  board.start()
 })

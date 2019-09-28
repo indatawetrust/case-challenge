@@ -7,8 +7,13 @@ class MenuBoard extends Menu {
 
     this.app = app
 
-    this.app.appendChild(this.image(this.menu[0]))
+  }
 
+  start () {
+    const meal = this.firstMeal()
+
+    const image = this.image(meal)
+    this.app.appendChild(image)
   }
 
   image (meal) {
