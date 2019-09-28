@@ -44,3 +44,14 @@ html, body {
     transform: scale(0.6, 0.6);
   }
 }
+
+#name {
+  position: absolute;
+  top: 12.5%;
+  width: 100%;
+  text-align: center;
+  font-size: 9rem;
+  color: #fff;
+  font-weight: 100;
+  color: #EE1D23;
+}

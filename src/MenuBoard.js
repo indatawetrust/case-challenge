@@ -18,6 +18,10 @@ class MenuBoard extends Menu {
 
     this.app.appendChild(image)
 
+    const name = this.name(meal)
+
+    this.app.appendChild(name)
+
     this.animation(image)
   }
 
@@ -28,6 +32,18 @@ class MenuBoard extends Menu {
       src: meal.image,
       id: 'image'
     })
+  }
+
+  name (meal) {
+    const { el } = this
+
+    return el(
+      'div',
+      {
+        id: 'name'
+      },
+      meal.name
+    )
   }
 
   animation (image) {

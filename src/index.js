@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
   const menu = [
     {
-      image: '/public/images/meal1.png'
+      image: '/public/images/meal1.png',
+      name: 'hamburger 1'
     }
   ]
 
