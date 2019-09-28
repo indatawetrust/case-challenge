@@ -1,8 +1,19 @@
 class MenuBoard {
-  constructor(menu) {
+  constructor(app, menu) {
 
-    console.log(this.el('div',{id:'test'},'hello world'))
+    this.app = app
 
+    this.app.appendChild(this.image())
+
+  }
+
+  image () {
+    const { el } = this
+
+    return el('img', {
+      src: '/public/images/meal1.png',
+      id: 'image'
+    })
   }
 
   $$ (selector) {
