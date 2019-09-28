@@ -7,13 +7,17 @@ class MenuBoard extends Menu {
 
     this.app = app
 
+    this.addAnimation = this.addAnimation.bind(this)
   }
 
   start () {
     const meal = this.firstMeal()
 
     const image = this.image(meal)
+
     this.app.appendChild(image)
+
+    this.animation(image)
   }
 
   image (meal) {
@@ -23,6 +27,35 @@ class MenuBoard extends Menu {
       src: meal.image,
       id: 'image'
     })
+  }
+
+  animation (image) {
+    const { addAnimation } = this
+
+    image.addEventListener(
+      'animationend', e => {
+        if (
+          !e.target.style['animation-name'] ||
+          e.target.style['animation-name'] === 'mealLeftToRight'
+        ) {
+          addAnimation('#image', {
+            name: 'mealRightToLeft',
+            duration: '1s'
+          })
+        } else {
+
+        }
+      })
+  }
+
+  addAnimation (selector, opts) {
+    const { $$ } = this
+
+    const element = $$(selector)
+
+    for (const [key, value] of Object.entries(opts)) {
+      element.style['animation-' + key] = value
+    }
   }
 
   $$ (selector) {

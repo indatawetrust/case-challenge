@@ -33,3 +33,14 @@ html, body {
     transform: scale(1, 1);
   }
 }
+
+@keyframes mealRightToLeft {
+  from {
+    left: 10%;
+    transform: scale(1, 1);
+  }
+  to {
+    left: -40%;
+    transform: scale(0.6, 0.6);
+  }
+}
