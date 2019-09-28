@@ -84,3 +84,11 @@ html, body {
     font-size: 8.5rem;
   }
 }
+
+#price {
+  position: fixed;
+  right: 20%;
+  bottom: 25%;
+  color: #EE1D23;
+  font-size: 8rem
+}

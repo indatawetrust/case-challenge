@@ -9,6 +9,7 @@ class MenuBoard extends Menu {
     this.app = app
 
     this.addAnimation = this.addAnimation.bind(this)
+    this.price = this.price.bind(this)
   }
 
   start () {
@@ -21,6 +22,10 @@ class MenuBoard extends Menu {
     const name = this.name(meal)
 
     this.app.appendChild(name)
+
+    const price = this.price(meal)
+
+    this.app.appendChild(price)
 
     this.animation(image)
   }
@@ -43,6 +48,18 @@ class MenuBoard extends Menu {
         id: 'name'
       },
       meal.name
+    )
+  }
+
+  price (meal) {
+    const { el } = this
+
+    return el(
+      'div',
+      {
+        id: 'price'
+      },
+      [el('span', {}, '₺'), el('span', {}, '15'), el('span', {}, ',99')]
     )
   }
 
