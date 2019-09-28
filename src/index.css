@@ -57,6 +57,7 @@ html, body {
   animation-name: nameFadeIn;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
+  font-family: 'Dosis', sans-serif;
 }
 
 @keyframes nameFadeIn {
@@ -93,6 +94,8 @@ html, body {
   animation-name: fadeInPrice;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700;
 }
 
 #price span:nth-child(1) {
