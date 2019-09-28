@@ -18,11 +18,15 @@
   },
   "homepage": "https://github.com/indatawetrust/case-challenge#readme",
   "devDependencies": {
+    "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "script-loader": "^0.7.2",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.6.2"
   }
 }
