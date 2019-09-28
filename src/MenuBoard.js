@@ -83,6 +83,11 @@ class MenuBoard extends Menu {
             name: 'nameFadeOut',
             duration: '1s'
           })
+
+          addAnimation('#price', {
+            name: 'fadeOutPrice',
+            duration: '1s'
+          })
         } else {
           const lastMeal = this.nextMeal()
 
@@ -97,6 +102,11 @@ class MenuBoard extends Menu {
 
           addAnimation('#name', {
             name: 'nameFadeIn',
+            duration: '1s'
+          })
+
+          addAnimation('#price', {
+            name: 'fadeInPrice',
             duration: '1s'
           })
         }
