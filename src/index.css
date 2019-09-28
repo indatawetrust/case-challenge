@@ -11,3 +11,25 @@ html, body {
   background: url(/public/images/background.jpeg) no-repeat center center fixed;
   background-size: cover
 }
+
+#image {
+  height: 45%;
+  margin: auto;
+  position: fixed;
+  bottom: 10%;
+  left: 10%;
+  animation-name: mealLeftToRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes mealLeftToRight {
+  from {
+    left: -40%;
+    transform: scale(0.6, 0.6);
+  }
+  to {
+    left: 10%;
+    transform: scale(1, 1);
+  }
+}
