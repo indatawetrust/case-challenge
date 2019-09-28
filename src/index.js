@@ -1,1 +1,3 @@
-document.body.innerHTML = 'hello world'
+document.addEventListener('DOMContentLoaded', function (e) {
+
+})
