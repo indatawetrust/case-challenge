@@ -61,9 +61,19 @@ class MenuBoard extends Menu {
             name: 'mealRightToLeft',
             duration: '1s'
           })
+
+          addAnimation('#name', {
+            name: 'nameFadeOut',
+            duration: '1s'
+          })
         } else {
           addAnimation('#image', {
             name: 'mealLeftToRight',
+            duration: '1s'
+          })
+
+          addAnimation('#name', {
+            name: 'nameFadeIn',
             duration: '1s'
           })
         }
