@@ -59,8 +59,16 @@ class MenuBoard extends Menu {
       {
         id: 'price'
       },
-      [el('span', {}, '₺'), el('span', {}, '15'), el('span', {}, ',99')]
+      [el('span', {}, '₺'), el('span', {}, meal.price.split(',')[0]), el('span', {}, `,${meal.price.split(',')[1]}`)]
     )
+  }
+
+  updatePrice(meal) {
+    const {$$} = this
+
+    $$('#price span:nth-child(2)').innerText = meal.price.split(',')[0]
+
+    $$('#price span:nth-child(3)').innerText = `,${meal.price.split(',')[1]}`
   }
 
   animation (image) {
@@ -104,6 +112,8 @@ class MenuBoard extends Menu {
             name: 'nameFadeIn',
             duration: '1s'
           })
+
+          this.updatePrice(lastMeal)
 
           addAnimation('#price', {
             name: 'fadeInPrice',
