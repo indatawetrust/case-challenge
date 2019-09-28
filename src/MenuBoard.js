@@ -1,8 +1,11 @@
-class MenuBoard {
+import Menu from './Menu'
+
+class MenuBoard extends Menu {
   constructor(app, menu) {
 
+    super(menu)
+
     this.app = app
-    this.menu = menu
 
     this.app.appendChild(this.image(this.menu[0]))
 
