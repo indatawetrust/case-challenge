@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function (e) {
       image: '/public/images/meal3.png',
       name: 'hamburger 3',
       price: '45,00'
+    },
+    {
+      image: '/public/images/meal4.png',
+      name: 'Triple Whopper',
+      price: '20,50'
     }
   ]
 

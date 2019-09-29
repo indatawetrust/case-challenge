@@ -63,12 +63,8 @@ class MenuBoard extends Menu {
     )
   }
 
-  updateMeal(meal) {
+  updateMeal() {
     const {$$, addAnimation} = this
-
-    $$('#price span:nth-child(2)').innerText = meal.price.split(',')[0]
-
-    $$('#price span:nth-child(3)').innerText = `,${meal.price.split(',')[1]}`
 
     const lastMeal = this.nextMeal()
 
@@ -76,6 +72,9 @@ class MenuBoard extends Menu {
 
     $$('#name').innerText = lastMeal.name
 
+    $$('#price span:nth-child(2)').innerText = lastMeal.price.split(',')[0]
+
+    $$('#price span:nth-child(3)').innerText = `,${lastMeal.price.split(',')[1]}`
   }
 
   animation (image) {
@@ -89,48 +88,64 @@ class MenuBoard extends Menu {
         ) {
           await delay(1000)
 
-          addAnimation('#image', {
-            name: 'mealRightToLeft',
-            duration: '1s'
-          })
-
-          addAnimation('#name', {
-            name: 'nameFadeOut',
-            duration: '1s'
-          })
-
-          addAnimation('#price', {
-            name: 'fadeOutPrice',
-            duration: '1s'
-          })
+          addAnimation([
+            [
+              '#image', {
+                name: 'mealRightToLeft',
+                duration: '1s'
+              }
+            ],
+            [
+              '#name', {
+                name: 'nameFadeOut',
+                duration: '1s'
+              }
+            ],
+            [
+              '#price', {
+                name: 'fadeOutPrice',
+                duration: '1s'
+              }
+            ]
+          ])
         } else {
-          addAnimation('#price', {
-            name: 'fadeInPrice',
-            duration: '1s'
-          })
-
-          addAnimation('#name', {
-            name: 'nameFadeIn',
-            duration: '1s'
-          })
-
-          addAnimation('#image', {
-            name: 'mealLeftToRight',
-            duration: '1s'
-          })
+          addAnimation([
+            [
+              '#price', {
+                name: 'fadeInPrice',
+                duration: '1s'
+              }
+            ],
+            [
+              '#name', {
+                name: 'nameFadeIn',
+                duration: '1s'
+              }
+            ],
+            [
+              '#image', {
+                name: 'mealLeftToRight',
+                duration: '1s'
+              }
+            ]
+          ])
 
           this.updateMeal()
         }
       })
   }
 
-  addAnimation (selector, opts) {
-    const { $$ } = this
+  addAnimation (animations) {
+    for (let animation of animations) {
+      const [selector, opts] = animation
 
-    const element = $$(selector)
+      const { $$ } = this
 
-    for (const [key, value] of Object.entries(opts)) {
-      element.style['animation-' + key] = value
+      const element = $$(selector)
+
+      for (const [key, value] of Object.entries(opts)) {
+        element.style['animation-' + key] = value
+      }
     }
   }
 
