@@ -63,12 +63,19 @@ class MenuBoard extends Menu {
     )
   }
 
-  updatePrice(meal) {
-    const {$$} = this
+  updateMeal(meal) {
+    const {$$, addAnimation} = this
 
     $$('#price span:nth-child(2)').innerText = meal.price.split(',')[0]
 
     $$('#price span:nth-child(3)').innerText = `,${meal.price.split(',')[1]}`
+
+    const lastMeal = this.nextMeal()
+
+    image.src = lastMeal.image
+
+    $$('#name').innerText = lastMeal.name
+
   }
 
   animation (image) {
@@ -97,28 +104,22 @@ class MenuBoard extends Menu {
             duration: '1s'
           })
         } else {
-          const lastMeal = this.nextMeal()
-
-          image.src = lastMeal.image
-
-          addAnimation('#image', {
-            name: 'mealLeftToRight',
+          addAnimation('#price', {
+            name: 'fadeInPrice',
             duration: '1s'
           })
-
-          $$('#name').innerText = lastMeal.name
 
           addAnimation('#name', {
             name: 'nameFadeIn',
             duration: '1s'
           })
 
-          this.updatePrice(lastMeal)
-
-          addAnimation('#price', {
-            name: 'fadeInPrice',
+          addAnimation('#image', {
+            name: 'mealLeftToRight',
             duration: '1s'
           })
+
+          this.updateMeal()
         }
       })
   }
