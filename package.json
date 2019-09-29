@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode development --open",
     "build": "webpack --config webpack.prod.js",
-    "start": "npm run build && http-serve -p 3000 build",
-    "heroku-postbuild": "npm run start"
+    "start": "http-serve -p 3000 build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
